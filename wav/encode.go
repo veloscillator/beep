@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/faiface/beep"
 	"github.com/pkg/errors"
+	"github.com/veloscillator/beep"
 )
 
 // Encode writes all audio streamed from s to w in WAVE format.

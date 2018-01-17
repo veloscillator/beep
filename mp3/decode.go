@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/faiface/beep"
 	gomp3 "github.com/hajimehoshi/go-mp3"
 	"github.com/pkg/errors"
+	"github.com/veloscillator/beep"
 )
 
 const (

@@ -3,7 +3,7 @@
 A small package that brings sound to any Go program (and real-time audio processing and other casual stuff)
 
 ```
-$ go get github.com/faiface/beep
+$ go get github.com/veloscillator/beep
 ```
 
 ## A (very short) Tour of Beep
@@ -14,10 +14,10 @@ Let's get started! Open an audio file (let's ignore errors for now, never do tha
 f, _ := os.Open("song.wav")
 ```
 
-Decode the file into a [Streamer](https://godoc.org/github.com/faiface/beep#Streamer).
+Decode the file into a [Streamer](https://godoc.org/github.com/veloscillator/beep#Streamer).
 
 ```go
-// import "github.com/faiface/beep/wav"
+// import "github.com/veloscillator/beep/wav"
 s, format, _ := wav.Decode(f)
 ```
 
@@ -28,7 +28,7 @@ audio from the file.
 Now, let's play the streamer. First, we need to initialize the speaker.
 
 ```go
-// import "github.com/faiface/beep/speaker"
+// import "github.com/veloscillator/beep/speaker"
 speaker.Init(format.SampleRate, format.SampleRate.N(time.Second/10))
 ```
 
@@ -75,5 +75,5 @@ And finally, we'll replace the hacky `select {}` with a receive from the channel
 
 And that's it!
 
-Take a look at the [documentation](https://godoc.org/github.com/faiface/beep) for other interesting
+Take a look at the [documentation](https://godoc.org/github.com/veloscillator/beep) for other interesting
 things you can do with Beep, such as mixing, looping, audio effects, and other useful stuff.

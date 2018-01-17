@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/faiface/beep"
 	"github.com/mewkiz/flac"
 	"github.com/pkg/errors"
+	"github.com/veloscillator/beep"
 )
 
 // Decode takes a ReadCloser containing audio data in FLAC format and returns a StreamSeekCloser,

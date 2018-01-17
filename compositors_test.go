@@ -5,7 +5,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/faiface/beep"
+	"github.com/veloscillator/beep"
 )
 
 // randomDataStreamer generates random samples of duration d and returns a Streamer which streams

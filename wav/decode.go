@@ -6,8 +6,8 @@ import (
 	"io"
 	"time"
 
-	"github.com/faiface/beep"
 	"github.com/pkg/errors"
+	"github.com/veloscillator/beep"
 )
 
 // Decode takes a ReadCloser containing audio data in WAVE format and returns a StreamSeekCloser,

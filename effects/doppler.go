@@ -1,6 +1,6 @@
 package effects
 
-import "github.com/faiface/beep"
+import "github.com/veloscillator/beep"
 
 func Doppler(quality int, samplesPerMeter float64, s beep.Streamer, distance func(delta int) float64) beep.Streamer {
 	return &doppler{
