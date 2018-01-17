@@ -192,9 +192,14 @@ func (b *Buffer) Pop(n int) {
 // Append adds all audio data from the given Streamer to the end of the Buffer.
 //
 // The Streamer will be drained when this method finishes.
-func (b *Buffer) Append(s Streamer) {
-	var samples [512][2]float64
-	for {
+func (b *Buffer) Append(s Streamer, numSamples int) {
+	for samplesLeft := numSamples; samplesLeft > 0; {
+		numSamplesIter := 512 // Samples to eat in this iteration.
+		if numSamplesIter > samplesLeft {
+			numSamplesIter = samplesLeft
+		}
+
+		samples := make([][2]float64, numSamplesIter)
 		n, ok := s.Stream(samples[:])
 		if !ok {
 			break
@@ -203,6 +208,8 @@ func (b *Buffer) Append(s Streamer) {
 			b.f.EncodeSigned(b.tmp, sample)
 			b.data = append(b.data, b.tmp...)
 		}
+
+		samplesLeft -= numSamplesIter
 	}
 }
 
